@@ -106,7 +106,7 @@ describe('app routes', () => {
       const newTask =
       {
         todo: 'Trash',
-        completed: false,
+        completed: true,
       };
 
       const expectedTask = {
@@ -121,8 +121,6 @@ describe('app routes', () => {
         .set('Authorization', token)
         .expect('Content-Type', /json/)
         .expect(200);
-
-
 
       const updatedTask = await fakeRequest(app)
         .get('/api/todos/2')
